@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 # defines an SMTP (simple mail transfer protocol) client session object that can be
 # used to send mail to any internet machine using SMTP or ESMTP listener daemon
 import smtplib
+import time
 
 # setting url of product url I want to watch in const var URL
 URL = 'https://www.amazon.com/gp/product/B01C9KG8IG/ref=ox_sc_act_title_1?smid=A191AP80363DWZ&psc=1'
@@ -64,4 +65,6 @@ def send_mail():
   print('EMAIL SENT!')
   server.quit()
 
-check_price()
+while(True): # infinite loop
+  check_price()
+  time.sleep(86400) # pause for amount of seconds in a day
