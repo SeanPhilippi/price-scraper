@@ -42,6 +42,8 @@ def check_price():
 
   if(converted_price < DESIRED_PRICE):
     send_mail()
+  else:
+    print('sorry, not today!')
 
 def send_mail():
   # plugging in host and port number to SMTP function to create server
@@ -62,7 +64,6 @@ def send_mail():
     'sean.philippi@gmail.com', # to
     msg # message to send
   )
-  print('EMAIL SENT!')
   server.quit()
 
 while(True): # infinite loop
